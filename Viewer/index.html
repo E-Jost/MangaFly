@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .imgbox {
+                position: relative;
+                display: grid;
+                height: 100%;
+            }
+            .center-fit {
+                max-width: 100%;
+                max-height: 100vh;
+                margin: auto;
+            }
+            body {
+                background-color: black;
+            }
+            .pagecount {
+                position: absolute;
+                text-align: left;
+                color: aliceblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="imgbox">
+            <b id="pages" class="pagecount"> / </b>
+            <img id="image" class="center-fit">
+        </div>
+    </body>
+    <script src="./images.js"></script> 
+</html>

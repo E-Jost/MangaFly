@@ -1,8 +1,26 @@
+let title;
+let numVolumes;
+let volumes;
 
+const pathName = "../res/Series/Berserk/Berserk.json";
+
+populate();
 addRow();
 addRow();
 
-let page = 1;
+async function populate()
+{
+    await fetch(pathName)
+    .then(response => response.json())
+    .then(data => {
+        title = data.title;
+        numVolumes = data.numVolumes;
+        volumes = data.volumes;
+    })
+    .catch(error => {
+        console.error('fetch error:', error);
+    });
+}
 
 function onClick(elem)
 {

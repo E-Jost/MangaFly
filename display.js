@@ -1,5 +1,7 @@
-const pathName = "./res/Series/Berserk/";
-const jsonPath = "./res/Series/Berserk/Berserk.json";
+//const pathName = "./res/Series/Berserk/";
+//const jsonPath = "./res/Series/Berserk/Berserk.json";
+const pathName = "./res/Series/Vinland Saga/";
+const jsonPath = "./res/Series/Vinland Saga/Vinland Saga.json";
 const colPerRow = 4;
 
 let seriesTitle;
@@ -18,11 +20,16 @@ async function populate()
         seriesTitle = data.title;
         numVolumes = data.numVolumes;
         volumes = data.volumes;
-        covers = data.covers
+        covers = data.covers;
     })
     .catch(error => {
         console.error('fetch error:', error);
     });
+
+    //init() ???
+    document.title = seriesTitle;
+    document.getElementById("title").innerHTML = seriesTitle;
+    //
 
     for(let i = 0; i < numVolumes; i = i + colPerRow)
     {

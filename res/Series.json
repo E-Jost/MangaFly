@@ -1,0 +1,20 @@
+{
+"numSeries": 3,
+"series": [
+{
+"title": "Berserk",
+"numVolumes": 40,
+"coverPath": "Berserk/Berserk-v1/Berserk-v1-0.jpg"
+},
+{
+"title": "One-Punch Man",
+"numVolumes": 23,
+"coverPath": "One-Punch Man/One-Punch Man v1/One-Punch Man v1-0.jpg"
+},
+{
+"title": "Vinland Saga",
+"numVolumes": 12,
+"coverPath": "Vinland Saga/Vinland Saga v1/Vinland Saga v1-0.jpg"
+}
+]
+}

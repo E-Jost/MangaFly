@@ -1,7 +1,6 @@
-//const pathName = "./res/Series/Berserk/";
-//const jsonPath = "./res/Series/Berserk/Berserk.json";
-const pathName = "../res/Series/Vinland Saga/";
-const jsonPath = "../res/Series/Vinland Saga/Vinland Saga.json";
+const path = "../res/Series/";
+const jsonTitle = sessionStorage.getItem("JSONTitle");
+const jsonPath = path + jsonTitle + "/" + jsonTitle + ".json";
 const colPerRow = 4;
 
 let seriesTitle;
@@ -65,7 +64,8 @@ function newColumn(row)
     {
         //create cover page element
         const img = document.createElement("img");
-        img.src = pathName + volumes[index] + "/" + covers[index];
+        img.src = path + seriesTitle + "/" + volumes[index] + "/" + covers[index];
+        console.log(img.src);
         //append cover page element to new column 
         newCol.appendChild(img);
         //create title text element
@@ -85,10 +85,6 @@ function newColumn(row)
 
 function onClick(elem)
 {
-    //let elements = elem.getElementsByTagName("img");
-    //let img = elements[0];
-    //img.src = "./res/Series/Berserk/Berserk-v1/Berserk-v1-1.jpg";
-
     let p = elem.getElementsByTagName("p");
 
     sessionStorage.setItem("VolumeTitle", p[0].innerHTML);

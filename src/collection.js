@@ -1,4 +1,4 @@
-const pathName = "../res/Series/";
+const path = "../res/Series/";
 const jsonPath = "../res/Series/Series.json";
 
 let numSeries;
@@ -27,10 +27,6 @@ async function populate()
 
 function addRow()
 {
-    //
-    //newCol.onclick = function () { onClick(this); };
-    //
-
     const newRow = document.createElement("div");
     newRow.classList.add("row");
     document.body.appendChild(newRow);
@@ -40,7 +36,9 @@ function addRow()
     newRow.appendChild(imgBox);
     
     const img = document.createElement("img");
-    img.src = pathName + series[index].coverPath;
+    img.id = series[index].title;
+    img.src = path + series[index].coverPath;
+    img.onclick = function () { onImageClick(this); };
     imgBox.appendChild(img);
     
     const textBox = document.createElement("div");
@@ -51,12 +49,25 @@ function addRow()
     const title = document.createElement("p");
     title.classList.add("title");
     title.appendChild(document.createTextNode(series[index].title));
+    title.onclick = function () { onTitleClick(this); };
     textBox.appendChild(title);
 
     const seriesInfo = document.createElement("p");
     seriesInfo.classList.add("info");
-    seriesInfo.appendChild(document.createTextNode(series[index].numVolumes));
+    seriesInfo.appendChild(document.createTextNode("Number of Items: " + series[index].numVolumes));
     textBox.appendChild(seriesInfo);
 
     index++;
+}
+
+function onImageClick(elem)
+{
+    sessionStorage.setItem("JSONTitle", elem.id);
+    window.location.href = "./display.html";
+}
+
+function onTitleClick(elem)
+{
+    sessionStorage.setItem("JSONTitle", elem.innerHTML);
+    window.location.href = "./display.html";
 }

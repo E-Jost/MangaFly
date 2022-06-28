@@ -1,0 +1,7 @@
+berserk color scheme
+
+#header: #a71404 // Secondary Color
+h1: #000000 // Header Title Color
+.column:hover: #ce1905 // Shading Color
+p: #ffffff //Individual Title Color
+body: #000000 // Primary Color
